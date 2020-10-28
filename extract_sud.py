@@ -24,7 +24,7 @@ def get_sud(transcript_docx, save_path):
     # read in word file
     data = docx2txt.process(transcript_docx)
     # specify extract pattern
-    re_pattern  = r"SESSION|[1-9][0-9]?\.\s*\n\r*|100.\s*"
+    re_pattern  = r"[1-9][0-9]?\.\s*\n{1,}\s*\n*|100\.\s*\n{1,}\s*\n*"
     res = re.findall(re_pattern, data) 
     
     sud_list = []
